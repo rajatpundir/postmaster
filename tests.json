@@ -1,21 +1,108 @@
 [
     {
+        "step": 1,
+        "hash": "0765103a979481c6cea94f4322bd5b69f2365d5f934e69e388dcebdb2b347565",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
         "url": "organization/create",
         "request": {
-            "organization": "pibity2234",
+            "organization": "pibity",
             "admin": "admin@xyz.com",
             "firstName": "Admin",
             "lastName": "",
             "password": "1234",
             "details": {}
-        },
-        "step": 1,
-        "response": {
-            "id": 7,
-            "name": "pibity2234"
         }
     },
     {
+        "step": 2,
+        "hash": "89bdb5618e107edc0642066a97c82639b40ba3630d1944ac3681fc54f4543eff",
+        "response": {
+            "orgId": 1,
+            "typeName": "A",
+            "keys": {
+                "x": {
+                    "order": 1,
+                    "type": "Number",
+                    "default": 0
+                },
+                "y": {
+                    "order": 2,
+                    "type": "Number",
+                    "default": 0
+                },
+                "z": {
+                    "order": 3,
+                    "type": "Number",
+                    "default": 0
+                },
+                "d": {
+                    "order": 4,
+                    "type": "Formula",
+                    "returnType": "Number",
+                    "expression": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "x"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "y"
+                                ]
+                            }
+                        ]
+                    },
+                    "symbols": [
+                        "x",
+                        "y"
+                    ]
+                }
+            },
+            "permissions": [
+                {
+                    "orgId": 1,
+                    "typeName": "A",
+                    "permissionName": "READ_ALL",
+                    "creatable": false,
+                    "deletable": false,
+                    "permissions": {
+                        "d": "READ",
+                        "x": "READ",
+                        "y": "READ",
+                        "z": "READ"
+                    }
+                },
+                {
+                    "orgId": 1,
+                    "typeName": "A",
+                    "permissionName": "WRITE_ALL",
+                    "creatable": true,
+                    "deletable": true,
+                    "permissions": {
+                        "x": "WRITE",
+                        "y": "WRITE",
+                        "z": "WRITE",
+                        "d": "READ"
+                    }
+                }
+            ]
+        },
         "url": "type/create",
         "request": {
             "orgId": 1,
@@ -76,20 +163,43 @@
                     "READ_ALL"
                 ]
             }
-        },
-        "step": 2,
-        "response": {
-            "statusCode": 500,
-            "error": {
-                "timestamp": "2020-11-25T07:46:04.721+00:00",
-                "status": 500,
-                "error": "Internal Server Error",
-                "message": "",
-                "path": "/api/type/create"
-            }
         }
     },
     {
+        "step": 3,
+        "hash": "08086fb4804fbf2adc25cd5f3e07ff78b08e026dca45141ece699d03ee0ab23d",
+        "response": {
+            "orgId": 1,
+            "type": "A",
+            "assertionName": "someAssertion",
+            "assertion": {
+                "op": "==",
+                "types": [
+                    "Number"
+                ],
+                "args": [
+                    {
+                        "op": "%",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "d"
+                                ]
+                            },
+                            3
+                        ]
+                    },
+                    0
+                ]
+            }
+        },
         "url": "assertion/create",
         "request": {
             "orgId": 1,
@@ -126,6 +236,92 @@
         }
     },
     {
+        "step": 4,
+        "hash": "2ea4145b2471ce9a46b781198a87f15e098e23488c39d2db2616f4877ee85fc3",
+        "response": {
+            "orgId": 1,
+            "typeName": "B",
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": "Number",
+                    "default": 0
+                },
+                "b": {
+                    "order": 2,
+                    "type": "Number",
+                    "default": 0
+                },
+                "c": {
+                    "order": 3,
+                    "type": "A"
+                },
+                "d": {
+                    "order": 4,
+                    "type": "Formula",
+                    "returnType": "Number",
+                    "expression": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "c",
+                                    "d"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            }
+                        ]
+                    },
+                    "symbols": [
+                        "a",
+                        "c.d"
+                    ]
+                }
+            },
+            "permissions": [
+                {
+                    "orgId": 1,
+                    "typeName": "B",
+                    "permissionName": "READ_ALL",
+                    "creatable": false,
+                    "deletable": false,
+                    "permissions": {
+                        "a": "READ",
+                        "b": "READ",
+                        "c": "READ",
+                        "d": "READ"
+                    }
+                },
+                {
+                    "orgId": 1,
+                    "typeName": "B",
+                    "permissionName": "WRITE_ALL",
+                    "creatable": true,
+                    "deletable": true,
+                    "permissions": {
+                        "a": "WRITE",
+                        "b": "WRITE",
+                        "c": "WRITE",
+                        "d": "READ"
+                    }
+                }
+            ]
+        },
         "url": "type/create",
         "request": {
             "orgId": 1,
@@ -189,6 +385,40 @@
         }
     },
     {
+        "step": 5,
+        "hash": "ef9e5edf0cec39b7cfa84e8adacaeeef3470dd6d64f2c341fa798b672f280d9b",
+        "response": {
+            "orgId": 1,
+            "type": "B",
+            "assertionName": "someAssertion",
+            "assertion": {
+                "op": "==",
+                "types": [
+                    "Number"
+                ],
+                "args": [
+                    {
+                        "op": "%",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "d"
+                                ]
+                            },
+                            5
+                        ]
+                    },
+                    0
+                ]
+            }
+        },
         "url": "assertion/create",
         "request": {
             "orgId": 1,
@@ -225,6 +455,20 @@
         }
     },
     {
+        "step": 6,
+        "hash": "6419a96cb4464a76d864333b30f3c3cb96c47e57b5a73e0463c12aeead4553e0",
+        "response": {
+            "organization": 1,
+            "typeName": "A",
+            "active": true,
+            "variableName": "1",
+            "values": {
+                "x": 1,
+                "y": 2,
+                "z": 3,
+                "d": 3
+            }
+        },
         "url": "variable/create",
         "request": {
             "orgId": 1,
@@ -238,6 +482,13 @@
         }
     },
     {
+        "step": 7,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "variableName": "Failed to assert someAssertion"
+            }
+        },
         "url": "variable/create",
         "request": {
             "orgId": 1,

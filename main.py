@@ -1,106 +1,98 @@
-import os, time, json, requests, hashlib
+import os
+import time
+import json
+import requests
+import hashlib
 from datetime import datetime, timedelta
 from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
-from git import Repo
+from watchdog.events import PatternMatchingEventHandler
+from keycloak import KeycloakOpenID
 
-tests_filename = 'tests.json'
-token = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3RjE2NHhQVlYzTTBCU1ZDZ1dEQTBKOVh5b1UzWEdQRVJ3SlZDLXZVUmF3In0.eyJleHAiOjE2MDYzMjcyMzgsImlhdCI6MTYwNjI5MTIzOCwiYXV0aF90aW1lIjoxNjA2MjkxMjM4LCJqdGkiOiI5ZWQzMjc0My04MzdkLTQ4MjItOWE0OC05NzNiMGZiNTczYTUiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODEvYXV0aC9yZWFsbXMvaW52ZW50b3J5IiwiYXVkIjpbInJlYWxtLW1hbmFnZW1lbnQiLCJhY2NvdW50Il0sInN1YiI6ImE4MzE1Y2JjLTA2NGUtNDE2Zi04N2Y2LTg1NmE5ODg2ZTQyOCIsInR5cCI6IkJlYXJlciIsImF6cCI6InBpYml0eS1lcnAiLCJub25jZSI6IjdmZjQ5MzhjLWEwZGQtNDEwYS1hOTY1LTc4NzI4NDZmZDE3YiIsInNlc3Npb25fc3RhdGUiOiJmOTI2NTJmNi1hOTEzLTRlNGUtYjNiMS1hOWMxYzZmYWM0NTEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiU1VQRVJVU0VSIiwiVVNFUiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJyZWFsbS1hZG1pbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZ3JvdXBzIjpbIi8xL0FETUlOIiwiLzEvVVNFUiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzdXBlcnVzZXJAcGliaXR5LmNvbSJ9.I3BwyVIDI0BUn48pNzkHUb9VL2hl1X6bOy6Jbam0Z6eUaBtcrEfMLqqef_7rzE0rrVH2hTlr_Ax5eRf7IYOYOQgMud6Nsz8IKgZagdarcnjoenItAdV78m3X7j0K7GLG_uYCMowc9Dcn_8YO9udM7ILBaGin_ln4egbETqEWUM9AbKx14Vfn128M1BOnnRfApJ_OmWNM8zZcC59FlOJ7VogGoZgtUaWjphjb3P1Fm6jWba4oojMGPTzCxtg_Try8hhPWCb_TV5SdLw5QLFwzl6VCeVJNShhhDSPDkd5gkKLTMsJDWXw1csmtoeelJ5UDUF_lA8g9ILy41axci9qWAA'
-hash_change_detected = False
-repo = Repo.init("./postgres")
+tests_filename = './tests.json'
+config_filename = './pibity-erp/src/main/resources/postmaster.json'
 
-def checkout_branch(branch_to_checkout):
-    global repo
-    branches = {}
-    print('Previous Branch:', repo.active_branch.name)
-    for head in repo.heads:
-        branches[head.name] = head
-    if repo.active_branch.name != branch_to_checkout:
-        if branch_to_checkout in branches:
-            branches[branch_to_checkout].checkout()
-        else:
-            branches[branch_to_checkout] = repo.create_head(branch_to_checkout)
-    print('Current Branch:', repo.active_branch.name)
-    return branches
 
-def get_commits(branch_name):
-    global repo
-    commits = list(repo.iter_commits(branch_name))
-    commits.reverse()
-    return commits
+with open('./pibity-erp/src/main/resources/postmaster.json', 'r') as config_file:
+    config = json.loads(config_file.read())
+    config_hash = hashlib.sha256(json.dumps(
+        config).encode('utf-8')).hexdigest()
 
-def get_first_resettable_commit(branch_name):
-    global repo
-    commits = get_commits(branch_name)
-    resettable_commit = commits[0]
-    for commit in commits:
-        if len(commit.message) == 64:
-            break
-        else:
-            resettable_commit = commit
-    print('Last Resettable Commit is:', resettable_commit.message)
-    return resettable_commit
+client_secret = config['keycloakClientSecret']
+run_count = int(config['runCount'])
 
-def execute_tests(branch_name = 'master'):
-    global repo
-    checkout_branch(branch_name)
-    commits = get_commits(branch_name)
-    resettable_commit = get_first_resettable_commit(branch_name)
-    print('Commit Messages')
-    commit_messages = {}
-    for commit in commits:
-        if not commit.message in commit_messages:
-            commit_messages[commit.message] = commit.hexsha
-            print(commit.hexsha, commit.message)
+keycloak_openid = KeycloakOpenID(server_url="http://localhost:8081/auth/",
+                    client_id="pibity-erp-admin",
+                    realm_name="inventory",
+                    client_secret_key=client_secret,
+                    verify=True)
+token = 'Bearer ' + keycloak_openid.token("superuser@pibity.com", "1234")['access_token']
+
+
+def execute_tests(hash_override=False):
+    global token
     headers = {'content-type': 'application/json', 'Authorization': token}
     with open(tests_filename, 'r') as tests_json, open('urls.json', 'r') as urls_json:
         tests = json.loads(tests_json.read())
         urls = json.loads(urls_json.read())
     test_outputs = []
     step = 0
+    orgId = 1
+    prev_block_hash = ''
     for index, test in enumerate(tests):
         step += 1
         url = urls['server'] + test['url']
         request = test['request']
-        test_output = {}
-        test_output['url'] = test['url']
-        test_output['request'] = request
         # Hash is computed based only on URL and Request Body (Needs to be calculated before further modifying above structure)
-        test_output_hash = hashlib.sha256(json.dumps(test_output).encode('utf-8')).hexdigest()
+        test_output_hash = hashlib.sha256(json.dumps(
+            {'url': test['url'], 'request': test['request'], 'prev_block_hash': prev_block_hash}).encode('utf-8')).hexdigest()
+        prev_block_hash = test_output_hash
+        test_output = {}
         test_output['step'] = step
-        response = requests.post(url, data=json.dumps(request), headers=headers)
-        global hash_change_detected
-        if not hash_change_detected:
-            if test_output_hash in commit_messages:
-                hash_change_detected = True
-                resettable_commit = commit_messages[test_output_hash]
-                print('Last Resettable Commit is:', resettable_commit.message)
-                test_outputs.append(test)
-                with open(tests_filename, 'w') as output:
-                    temp_tests = test_outputs.copy()
-                    temp_tests.extend(tests[(index+1):])
-                    output.write(json.dumps(temp_tests, indent = 4))
-                print('SKIPPING STEP', step, '\n')
-                continue
-            else:
-                repo.head.reset(resettable_commit, index=True, working_tree=True)
-        print('STEP', step, '\n')
-        print('URL:', url, '\n')
-        print('REQUEST:', json.dumps(request, indent = 1), '\n')
+        if not hash_override and 'hash' in test and test['hash'] == test_output_hash:
+            if test['url'] == 'organization/create':
+                orgId = int(test['response']['id'])
+            test_outputs.append(test)
+            with open(tests_filename, 'w') as output:
+                temp_tests = test_outputs.copy()
+                temp_tests.extend(tests[(index+1):])
+                output.write(json.dumps(temp_tests, indent=4))
+            print('SKIPPING STEP', step, '\n')
+            continue
+        if test['url'] != 'organization/create':
+            request['orgId'] = orgId
+        print('\n', 'STEP   :', step)
+        print('\n', 'HASH   :', test_output_hash)
+        print('\n', 'URL    :', url)
+        print('\n', 'REQUEST:', json.dumps(request, indent=1))
+        try:
+            response = requests.post(url, data=json.dumps(request), headers=headers)
+        except:
+            return
+        if response.status_code == 200 and test['url'] == 'organization/create':
+            orgId = int(response.json()['id'])
+            token = 'Bearer ' + \
+                keycloak_openid.token(
+                    "superuser@pibity.com", "1234")['access_token']
         if response.status_code == 200:
-            print('RESPONSE:', json.dumps(response.json(), indent = 1))
+            print('\n', 'RESPONSE:', json.dumps(response.json(), indent=1))
+            test_output['hash'] = test_output_hash
             test_output['response'] = response.json()
         else:
             test_output_response = {}
             test_output_response['statusCode'] = response.status_code
-            print('STATUS CODE:', response.status_code)
+            print('\n', 'STATUS CODE:', response.status_code)
             try:
-                print('ERROR:', json.dumps(response.json(), indent = 1))
-                test_output_response['error'] = response.json()
+                if 'message' in response.json():
+                    test_output_response['error'] = response.json()['message']
+                else:
+                    test_output_response['error'] = response.json()
+                print('\n', 'ERROR:', json.dumps(test_output_response['error'], indent=1))
             except:
                 test_output_response['error'] = response.text
                 pass
             test_output['response'] = test_output_response
+            test_output['url'] = test['url']
+            test_output['request'] = request
             test_outputs.append(test_output)
             with open(tests_filename, 'w') as output:
                 temp_tests = test_outputs.copy()
@@ -110,44 +102,59 @@ def execute_tests(branch_name = 'master'):
                     t['request'] = temp_test['request']
                     temp_tests.append(t)
                 output.write(json.dumps(temp_tests, indent = 4))
-            print('STOPPING EXECUTION')
+            print('\n', 'STOPPING EXECUTION')
             break
+        test_output['url'] = test['url']
+        test_output['request'] = request
         test_outputs.append(test_output)
-        print('-------------------------------------' + '\n')
+        print('\n', '--------------------------------------------')
         with open(tests_filename, 'w') as output:
             temp_tests = test_outputs.copy()
             for temp_test in tests[(index+1):]:
                 t = {}
+                t['hash'] = test_output_hash
                 t['url'] = temp_test['url']
                 t['request'] = temp_test['request']
                 temp_tests.append(t)
             output.write(json.dumps(temp_tests, indent = 4))
-#         repo.index.add('tests.json')
-        repo.index.commit(test_output_hash)
 
+execute_tests(hash_override = True)
 
-class WatchdogHandler(FileSystemEventHandler):
-    def __init__(self):
-        self.last_modified = datetime.now()
-    def on_modified(self, event):
-        if datetime.now() - self.last_modified < timedelta(seconds=1):
-            return
-        else:
-            self.last_modified = datetime.now()
+class MyEventHandler(PatternMatchingEventHandler):
+    def on_any_event(self, event):
+        global config, client_secret, run_count, keycloak_openid, token
 #         print(f'Event type: {event.event_type}  path : {event.src_path}')
-#         print(event.is_directory)
-        if not event.is_directory and event.src_path == ('./' + tests_filename) :
+        if event.src_path == (tests_filename):
+            print('\n', 'DETECTED: CHANGE IN TESTS')
             execute_tests()
+            time.sleep(6)
+        elif event.src_path == (config_filename):
+            with open('./pibity-erp/src/main/resources/postmaster.json', 'r') as config_file:
+                config = json.loads(config_file.read())
+            if config_hash != hashlib.sha256(json.dumps(config).encode('utf-8')).hexdigest():
+                if client_secret != config['keycloakClientSecret']:
+                    print('\n', 'DETECTED: TOKEN UPDATE')
+                    client_secret = config['keycloakClientSecret']
+                    keycloak_openid = KeycloakOpenID(server_url="http://localhost:8081/auth/",
+                                        client_id="pibity-erp-admin",
+                                        realm_name="inventory",
+                                        client_secret_key=client_secret,
+                                        verify=True)
+                    token = 'Bearer ' + keycloak_openid.token("superuser@pibity.com", "1234")['access_token']
+                if run_count != config['runCount']:
+                    run_count = config['runCount']
+                    print('\n', 'DETECTED: SERVER RESTART')
+                    time.sleep(6)
+                    execute_tests(hash_override = True)
 
 
-execute_tests()
-# observer = Observer()
-# observer.schedule(WatchdogHandler(), path='.', recursive=False)
-# observer.start()
-# try:
-#     while True:
-#         time.sleep(1)
-# except KeyboardInterrupt:
-#     observer.stop()
-# observer.join()
-
+event_handler = MyEventHandler(patterns=['*.json'], ignore_patterns=[], ignore_directories=True)
+observer = Observer()
+observer.schedule(event_handler, '.', recursive=True)
+observer.start()
+try:
+    while True:
+        time.sleep(1)
+finally:
+    observer.stop()
+    observer.join()

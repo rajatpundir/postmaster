@@ -1,0 +1,221 @@
+{
+    "server": "http://localhost:8080/api/",
+    "urls": {
+        "organization": {
+            "create": {
+                "file": "createUser",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            }
+        },
+        "type": {
+            "create": {
+                "file": "createType",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "details": {
+                "file": "getTypeDetails",
+                "roles": [
+                    "USER"
+                ]
+            }
+        },
+        "variable": {
+            "create": {
+                "file": "createVariable",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "update": {
+                "file": "updateVariable",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "query": {
+                "file": "queryVariables",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "query/public": {
+                "file": null,
+                "roles": []
+            }
+        },
+        "function": {
+            "create": {
+                "file": "createFunction",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "execute": {
+                "file": "executeFunction",
+                "roles": [
+                    "USER"
+                ]
+            }
+        },
+        "assertion": {
+            "create": {
+                "file": "createAssertion",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "details": {
+                "file": "getAssertionDetails",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            }
+        },
+        "typePermission": {
+            "create": {
+                "file": "createPermission",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "update": {
+                "file": "updatePermission",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "details": {
+                "file": "getPermissionDetails",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            }
+        },
+        "functionPermission": {
+            "create": {
+                "file": "createPermission",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "update": {
+                "file": "updatePermission",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "details": {
+                "file": "getPermissionDetails",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            }
+        },
+        "role": {
+            "create": {
+                "file": "createRole",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "update/typePermissions": {
+                "file": "updateRoleTypePermissions",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "update/functionPermissions": {
+                "file": "updateRoleFunctionPermissions",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            },
+            "details": {
+                "file": "getRoleDetails",
+                "roles": [
+                    "SUPERUSER"
+                ]
+            }
+        },
+        "group": {
+            "create": {
+                "file": "createGroup",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "update": {
+                "file": "updateGroup",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "details": {
+                "file": "getGroupDetails",
+                "roles": [
+                    "USER"
+                ]
+            }
+        },
+        "user": {
+            "create": {
+                "file": "createUser",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "update/groups": {
+                "file": "updateUserGroups",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "update/roles": {
+                "file": "updateUserRoles",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "details": {
+                "file": "getUserDetails",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "typePermissions": {
+                "file": "getUserTypePermissions",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "functionPermissions": {
+                "file": "getUserFunctionPermissions",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "superimpose/typePermissions": {
+                "file": "superimposeUserTypePermissions",
+                "roles": [
+                    "USER"
+                ]
+            },
+            "superimpose/functionPermissions": {
+                "file": "superimposeUserFunctionPermissions",
+                "roles": [
+                    "USER"
+                ]
+            }
+        },
+        "lisp": {
+            "evaluate": {
+                "file": "evaluateExpression",
+                "roles": []
+            }
+        }
+    }
+}

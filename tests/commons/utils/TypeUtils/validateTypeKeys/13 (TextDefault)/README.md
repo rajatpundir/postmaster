@@ -1,0 +1,1 @@
+Text can not be object

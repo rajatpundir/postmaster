@@ -1,0 +1,918 @@
+[
+    {
+        "step": 1,
+        "hash": "b702d5b5848b453e7de807d9a7b8d88c1cb5c65469afd99d808df4acbb88d8e3",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
+        "url": "organization/create",
+        "request": {
+            "organization": "pibity",
+            "admin": "admin1@xyz",
+            "firstName": "admin",
+            "lastName": "",
+            "password": "1234",
+            "details": {}
+        }
+    },
+    {
+        "step": 2,
+        "hash": "ffff6ef75ca9d5bde25e10d33dd586d9ba8f2ea58f903fb34b5c5b938f373339",
+        "response": {
+            "orgId": 1,
+            "autoId": true,
+            "typeName": "ZZ",
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": "Boolean",
+                    "default": false
+                },
+                "b": {
+                    "order": 2,
+                    "type": "Boolean",
+                    "default": false
+                },
+                "bb": {
+                    "order": 4,
+                    "type": "Boolean",
+                    "default": false
+                },
+                "ccKeys": {
+                    "order": 6,
+                    "type": {
+                        "superTypeName": "ZZ",
+                        "typeName": "XYZ",
+                        "keys": {
+                            "b": {
+                                "order": 1,
+                                "type": "Number",
+                                "default": 0
+                            }
+                        }
+                    }
+                },
+                 "testPlus": {
+                    "order": 5,
+                    "type": "Formula",
+                    "returnType": "Number",
+                    "expression": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "bb"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "num"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "c": {
+                    "order": 3,
+                    "type": "Formula",
+                    "returnType": "Boolean",
+                    "expression": {
+                        "op": "and",
+                        "types": [
+                            "Boolean"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "num": {
+                    "order": 11,
+                    "type": "Number",
+                    "default": "565"
+                },
+                "textt": {
+                    "order": 12,
+                    "type": "Text"
+                },
+                "e": {
+                    "type": "List",
+                    "listType": "Country",
+                    "order": 13,
+                    "max": "4",
+                    "min": "0"
+                },
+                "f": {
+                    "order": 14,
+                    "type": "Country"
+                },
+                "g": {
+                    "type": "List",
+                    "max": 8,
+                    "min": 3,
+                    "order": 15,
+                    "listType": {
+                        "typeName": "Wff",
+                        "keys": {
+                            "a": {
+                                "type": "Text",
+                                "order": 1
+                            },
+                            "c": {
+                                "type": "Decimal",
+                                "order": 3
+                            }
+                        }
+                    }
+                },
+                "testBoolean": {
+                    "order": 5,
+                    "type": "Formula",
+                    "returnType": "Boolean",
+                    "expression": {
+                        "op": "or",
+                        "types": [
+                            "Boolean"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [
+                {
+                    "orgId": 1,
+                    "typeName": "ZZ",
+                    "permissionName": "READ_ALL",
+                    "creatable": false,
+                    "deletable": false,
+                    "permissions": {
+                        "bb": "READ",
+                        "ccKeys": {
+                            "permissions": {
+                                "b": "READ"
+                            }
+                        },
+                        "c": "READ",
+                        "testBoolean": "READ",
+                        "a": "READ",
+                        "b": "READ"
+                    }
+                },
+                {
+                    "orgId": 1,
+                    "typeName": "ZZ",
+                    "permissionName": "WRITE_ALL",
+                    "creatable": true,
+                    "deletable": true,
+                    "permissions": {
+                        "a": "WRITE",
+                        "b": "WRITE",
+                        "bb": "WRITE",
+                        "ccKeys": {
+                            "permissions": {
+                                "b": "WRITE"
+                            }
+                        },
+                        "c": "READ",
+                        "testBoolean": "READ"
+                    }
+                }
+            ]
+        },
+        "url": "type/create",
+        "request": {
+            "typeName": "zz",
+            "autoId": true,
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": "Boolean"
+                },
+                "b": {
+                    "order": 2,
+                    "type": "Boolean"
+                },
+                "bb": {
+                    "order": 4,
+                    "type": "Boolean"
+                },
+                "ccKeys": {
+                    "order": 6,
+                    "type": {
+                        "typeName": "XYZ",
+                        "keys": {
+                            "b": {
+                                "type": "Number",
+                                "order": 1
+                            }
+                        }
+                    }
+                },
+                "c": {
+                    "order": 3,
+                    "type": "Formula",
+                    "returnType": "Boolean",
+                    "expression": {
+                        "op": "and",
+                        "types": [
+                            "Boolean"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "testBoolean": {
+                    "order": 5,
+                    "type": "Formula",
+                    "returnType": "Boolean",
+                    "expression": {
+                        "op": "or",
+                        "types": [
+                            "Boolean"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "WRITE_ALL"
+                ],
+                "USER": [
+                    "READ_ALL"
+                ]
+            },
+            "orgId": 1
+        }
+    },
+    {
+        "step": 3,
+        "hash": "7dabef6b0425208448f84a261094217196843e37323028301a26cc02b28bb9a7",
+        "response": [
+            [
+                {
+                    "organization": 1,
+                    "typeName": "ZZ",
+                    "active": true,
+                    "variableName": "7",
+                    "values": {
+                        "testBoolean": true,
+                        "a": true,
+                        "b": true,
+                        "bb": false,
+                        "ccKeys": {
+                            "context": 566,
+                            "variableName": "",
+                            "values": {
+                                "b": 1234
+                            }
+                        },
+                        "c": true
+                    }
+                }
+            ],
+            {},
+            [
+                {
+                    "organization": 1,
+                    "typeName": "ZZ",
+                    "active": true,
+                    "variableName": "8",
+                    "values": {
+                        "a": true,
+                        "b": false,
+                        "bb": false,
+                        "ccKeys": {
+                            "context": 567,
+                            "variableName": "",
+                            "values": {
+                                "b": 5464
+                            }
+                        },
+                        "c": false,
+                        "testBoolean": true
+                    }
+                }
+            ],
+            {},
+            [
+                {
+                    "ccKeys": "Key value is not provided",
+                    "step": 0
+                }
+            ],
+            [
+                {
+                    "ccKeys": "Key value is not provided",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "a": true,
+                        "num": 2222,
+                        "f": "Australia",
+                        "textt": "simran",
+                        "e": [
+                            "India",
+                            "France"
+                        ],
+                        "g": [
+                            {
+                                "variableName": "1",
+                                "values": {
+                                    "a": "kavita",
+                                    "c": "12.22"
+                                }
+                            },
+                            {
+                                "variableName": "2",
+                                "values": {
+                                    "a": "priynka",
+                                    "c": "188.22"
+                                }
+                            },
+                            {
+                                "variableName": "3",
+                                "values": {
+                                    "a": "adhey",
+                                    "c": "18.22"
+                                }
+                            }
+                        ],
+                        "b": true,
+                        "ccKeys": {
+                            "values": {
+                                "b": 56
+                            }
+                        }
+                    },
+            
+                [
+                    {
+                        "op": "create",
+                        "typeName": "ZZ",
+                        "variableName": "",
+                        "values": {
+                            "a": true,
+                            "b": false,
+                            "ccKeys": {
+                                "typeName": "XYZ",
+                                "variableName": "",
+                                "values": {
+                                    "b": "5464"
+                                }
+                            }
+                        }
+                    }
+                ],
+                [
+                    {
+                        "op": "create",
+                        "typeName": "ZZ",
+                        "variableName": "",
+                        "values": {
+                            "a": false,
+                            "b": true
+                        }
+                    }
+                ],
+                [
+                    {
+                        "op": "create",
+                        "typeName": "ZZ",
+                        "variableName": "",
+                        "values": {
+                            "a": false,
+                            "b": false
+                        }
+                    }
+                ]
+            ]
+        }
+    },
+    {
+        "step": 4,
+        "response": {
+            "statusCode": 401,
+            "error": ""
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Aa",
+            "autoId": true,
+            "keys": {
+                "a": {
+                    "type": "Text",
+                    "order": 1,
+                    "default": "kavita"
+                },
+                "bb": {
+                    "type": "Number",
+                    "order": 2,
+                    "default": "123"
+                },
+                "b": {
+                    "type": "Number",
+                    "order": 20,
+                    "default": "123"
+                },
+                "c": {
+                    "type": "Decimal",
+                    "order": 3,
+                    "default": "12.222"
+                },
+                "d": {
+                    "type": "Boolean",
+                    "order": 4,
+                    "default": "true"
+                },
+                "dBoolean": {
+                    "type": "Boolean",
+                    "order": 40,
+                    "default": "true"
+                },
+                "dBooleanTest": {
+                    "type": "Formula",
+                    "order": 41,
+                    "returnType": "Boolean",
+                    "expression": {
+                        "op": "and",
+                        "types": [
+                            "Boolean"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "d"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "dBoolean"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "e": {
+                    "type": "List",
+                    "listType": "Country",
+                    "order": 5,
+                    "max": 8,
+                    "min": 3
+                },
+                "f": {
+                    "type": "List",
+                    "max": 8,
+                    "min": 3,
+                    "order": 9,
+                    "listType": {
+                        "typeName": "W",
+                        "keys": {
+                            "a": {
+                                "type": "Text",
+                                "order": 1,
+                                "default": "kavita"
+                            },
+                            "b": {
+                                "type": "Number",
+                                "order": 2,
+                                "default": "123"
+                            },
+                            "c": {
+                                "type": "Decimal",
+                                "order": 3,
+                                "default": "12.222"
+                            },
+                            "d": {
+                                "type": "Boolean",
+                                "order": 4,
+                                "default": "true"
+                            },
+                            "e": {
+                                "type": "List",
+                                "listType": "Country",
+                                "order": 5,
+                                "max": 8,
+                                "min": 3
+                            },
+                            "ab": {
+                                "type": "Formula",
+                                "order": 10,
+                                "returnType": "Number",
+                                "expression": {
+                                    "op": "+",
+                                    "types": [
+                                        "Number"
+                                    ],
+                                    "args": [
+                                        {
+                                            "op": ".",
+                                            "types": [
+                                                "Number"
+                                            ],
+                                            "args": [
+                                                "b"
+                                            ]
+                                        },
+                                        {
+                                            "op": ".",
+                                            "types": [
+                                                "Number"
+                                            ],
+                                            "args": [
+                                                "c"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "g": {
+                    "type": "Formula",
+                    "order": 7,
+                    "returnType": "Number",
+                    "expression": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "h": {
+                    "order": 8,
+                    "type": {
+                        "typeName": "Q",
+                        "keys": {
+                            "a": {
+                                "type": "Text",
+                                "order": 1,
+                                "default": "kavita"
+                            },
+                            "b": {
+                                "type": "Number",
+                                "order": 2,
+                                "default": "123"
+                            },
+                            "c": {
+                                "type": "Decimal",
+                                "order": 3,
+                                "default": "12.222"
+                            },
+                            "d": {
+                                "type": "Boolean",
+                                "order": 4,
+                                "default": "true"
+                            },
+                            "e": {
+                                "type": "List",
+                                "listType": "Country",
+                                "order": 5,
+                                "max": "4",
+                                "min": "0"
+                            },
+                            "f": {
+                                "type": "Formula",
+                                "order": 7,
+                                "returnType": "Number",
+                                "expression": {
+                                    "op": "+",
+                                    "types": [
+                                        "Number"
+                                    ],
+                                    "args": [
+                                        {
+                                            "op": ".",
+                                            "types": [
+                                                "Number"
+                                            ],
+                                            "args": [
+                                                "b"
+                                            ]
+                                        },
+                                        {
+                                            "op": "-",
+                                            "types": [
+                                                "Number"
+                                            ],
+                                            "args": [
+                                                {
+                                                    "op": ".",
+                                                    "types": [
+                                                        "Number"
+                                                    ],
+                                                    "args": [
+                                                        "b"
+                                                    ]
+                                                },
+                                                {
+                                                    "op": ".",
+                                                    "types": [
+                                                        "Number"
+                                                    ],
+                                                    "args": [
+                                                        "c"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "formulaTest": {
+                                "order": 22,
+                                "type": {
+                                    "typeName": "XX",
+                                    "keys": {
+                                        "ff": {
+                                            "type": "List",
+                                            "max": 8,
+                                            "min": 3,
+                                            "order": 9,
+                                            "listType": {
+                                                "typeName": "Wa",
+                                                "keys": {
+                                                    "e": {
+                                                        "type": "Formula",
+                                                        "order": 14,
+                                                        "returnType": "Decimal",
+                                                        "expression": {
+                                                            "op": "-",
+                                                            "types": [
+                                                                "Decimal"
+                                                            ],
+                                                            "args": [
+                                                                {
+                                                                    "op": ".",
+                                                                    "types": [
+                                                                        "Number"
+                                                                    ],
+                                                                    "args": [
+                                                                        "d",
+                                                                        "ab"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "op": ".",
+                                                                    "types": [
+                                                                        "Number"
+                                                                    ],
+                                                                    "args": [
+                                                                        "d",
+                                                                        "bc"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    "d": {
+                                                        "order": "4",
+                                                        "type": {
+                                                            "typeName": "Y",
+                                                            "keys": {
+                                                                "b": {
+                                                                    "type": "Number",
+                                                                    "order": 2,
+                                                                    "default": "123"
+                                                                },
+                                                                "c": {
+                                                                    "type": "Decimal",
+                                                                    "order": 3,
+                                                                    "default": "12.222"
+                                                                },
+                                                                "ab": {
+                                                                    "type": "Formula",
+                                                                    "order": 13,
+                                                                    "returnType": "Number",
+                                                                    "expression": {
+                                                                        "op": "+",
+                                                                        "types": [
+                                                                            "Number"
+                                                                        ],
+                                                                        "args": [
+                                                                            {
+                                                                                "op": ".",
+                                                                                "types": [
+                                                                                    "Number"
+                                                                                ],
+                                                                                "args": [
+                                                                                    "b"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "op": ".",
+                                                                                "types": [
+                                                                                    "Number"
+                                                                                ],
+                                                                                "args": [
+                                                                                    "c"
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "bc": {
+                                                                    "type": "Formula",
+                                                                    "order": 14,
+                                                                    "returnType": "Number",
+                                                                    "expression": {
+                                                                        "op": "*",
+                                                                        "types": [
+                                                                            "Number"
+                                                                        ],
+                                                                        "args": [
+                                                                            {
+                                                                                "op": ".",
+                                                                                "types": [
+                                                                                    "Number"
+                                                                                ],
+                                                                                "args": [
+                                                                                    "b"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "op": ".",
+                                                                                "types": [
+                                                                                    "Number"
+                                                                                ],
+                                                                                "args": [
+                                                                                    "c"
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "WRITE_ALL"
+                ],
+                "USER": [
+                    "READ_ALL"
+                ]
+            }
+        }
+    },
+    {
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "Aa",
+                        "variableName": "",
+                        "values": {
+                            "d": true,
+                            "dBoolean": true,
+                            "values": {
+                                "h": {
+                                    "values": {
+                                        "b": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

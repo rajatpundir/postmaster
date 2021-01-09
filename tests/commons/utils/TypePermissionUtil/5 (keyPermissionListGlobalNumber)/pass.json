@@ -1,0 +1,45 @@
+[
+    {
+        "step": 1,
+        "hash": "aed368c1e9725fb3a12f602bb307b46dbd422384472a86448b4ddc8fce02b286",
+        "response": {
+            "orgId": 1,
+            "typeName": "A",
+            "permissionName": "READ_ONLY",
+            "creatable": true,
+            "deletable": true,
+            "permissions": {
+                "a": "NONE",
+                "b": "READ",
+                "e": {
+                    "permissions": {
+                        "a": "NONE"
+                    }
+                },
+                "c": "READ",
+                "d": "READ"
+            }
+        },
+        "url": "typePermission/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "A",
+            "permissionName": "READ_ONLY",
+            "creatable": true,
+            "deletable": true,
+            "permissions": {
+                "a": 0,
+                "b": 1,
+                "c": 1,
+                "d": 1,
+                "e": {
+                    "creatable": "true",
+                    "deletable": "true",
+                    "permissions": {
+                        "a": 0
+                    }
+                }
+            }
+        }
+    }
+]

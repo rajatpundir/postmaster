@@ -1,0 +1,44 @@
+[
+    {
+        "step": 1,
+        "hash": "f11e404df515a19c1ee44580ecc0574dc63f3cd0b0c9e31974478061b43e5011",
+        "response": [
+            [
+                {
+                    "organization": 1,
+                    "typeName": "A2",
+                    "active": true,
+                    "variableName": "6",
+                    "values": {
+                        "a": [
+                            "India",
+                            "Bhutan",
+                            "Australia"
+                        ]
+                    }
+                }
+            ],
+            {}
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A2",
+                        "variableName": "",
+                        "values": {
+                            "a": [
+                                "India",
+                                "Bhutan",
+                                "Australia"
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

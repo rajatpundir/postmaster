@@ -1,0 +1,49 @@
+[
+    {
+        "step": 1,
+        "hash": "bee55e23eb3ab9b3d67c2c39f435cb939ee052969ef8db5e33c4cbfe7865756e",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
+        "url": "organization/create",
+        "request": {
+            "organization": "pibity",
+            "admin": "admin@pibity.com",
+            "firstName": "System",
+            "lastName": "Administrator",
+            "password": "1234",
+            "details": {}
+        }
+    },
+    {
+        "step": 2,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "keys": {
+                    "a": {
+                        "type": {
+                            "typeName": "Unexpected value for parameter"
+                        }
+                    }
+                }
+            }
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xyz",
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": {
+                        "typeName": {}
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

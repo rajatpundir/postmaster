@@ -1,0 +1,47 @@
+[
+    {
+        "step": 1,
+        "hash": "ae17ed4119413bfd0383a2e3ad0c59470d8fd5f70a9869368d6a20ff90ecc632",
+        "response": [
+            [
+                {
+                    "b": {
+                        "remove": "Unexpected value for parameter"
+                    },
+                    "step": 1
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A5",
+                        "variableName": "",
+                        "values": {
+                            "b": [
+                                "India"
+                            ]
+                        }
+                    },
+                    {
+                        "op": "update",
+                        "typeName": "A5",
+                        "variableName": "1",
+                        "values": {
+                            "b": {
+                                "add": [
+                                    "Bhutan"
+                                ],
+                                "remove": {}
+                            }
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

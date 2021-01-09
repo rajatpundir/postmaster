@@ -1,12 +1,18 @@
 [
     {
         "step": 1,
+        "hash": "d86136146efbbe3c7489c1b72f9d69acaf42facbfba49a39d747ac787ebc8e9f",
         "response": {
-            "statusCode": 400,
-            "error": {
-                "permissions": {
-                    "a": {
-                        "creatable": "Unexpected value for parameter"
+            "orgId": 1,
+            "typeName": "A1",
+            "permissionName": "READ_ONLY",
+            "creatable": true,
+            "deletable": true,
+            "permissions": {
+                "a": {
+                    "permissions": {
+                        "b": "NONE",
+                        "c": "READ"
                     }
                 }
             }
@@ -20,7 +26,7 @@
             "deletable": true,
             "permissions": {
                 "a": {
-                    "creatable": [],
+                    "creatable": "true",
                     "deletable": "true",
                     "permissions": {
                         "b": 0,

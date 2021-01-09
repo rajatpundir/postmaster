@@ -1,0 +1,30 @@
+[
+    {
+        "step": 1,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "keys": {
+                    "a": {
+                        "min": "Max/Min size for List is not valid"
+                    }
+                }
+            }
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xz",
+            "keys": {
+                "a": {
+                    "type": "List",
+                    "listType": "Country",
+                    "max": 6,
+                    "min": 8
+                }
+            },
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

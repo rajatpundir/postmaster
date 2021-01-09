@@ -1,0 +1,30 @@
+
+
+[
+    {
+        "step": 1,
+        "hash": "bab8c924356c8cc09661bde2088dfe8e61981a8c0f394d856b485dff3049425f",
+        "response": [
+            [
+                {
+                    "values": "Unexpected value for parameter"
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "context": 123,
+                        "typeName": "Ax",
+                        "variableName": "",
+                        "values": ""
+                    }
+                ]
+            ]
+        }
+    }
+]

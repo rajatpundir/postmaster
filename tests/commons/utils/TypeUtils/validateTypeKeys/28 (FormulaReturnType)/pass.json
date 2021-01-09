@@ -1,0 +1,124 @@
+[
+    {
+        "step": 1,
+        "hash": "7df002f6371fb0213d9533b9f871223adad151ab5f7580264b86f6b671865838",
+        "response": {
+            "orgId": 1,
+            "autoId": false,
+            "typeName": "Xrz",
+            "keys": {
+                "b": {
+                    "order": 1,
+                    "type": "Number",
+                    "default": 0
+                },
+                "g": {
+                    "order": 7,
+                    "type": "Formula",
+                    "returnType": "Number",
+                    "expression": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [
+                {
+                    "orgId": 1,
+                    "typeName": "Xrz",
+                    "permissionName": "READ_ALL",
+                    "creatable": false,
+                    "deletable": false,
+                    "permissions": {
+                        "b": "READ",
+                        "g": "READ"
+                    }
+                },
+                {
+                    "orgId": 1,
+                    "typeName": "Xrz",
+                    "permissionName": "WRITE_ALL",
+                    "creatable": true,
+                    "deletable": true,
+                    "permissions": {
+                        "g": "READ",
+                        "b": "WRITE"
+                    }
+                }
+            ]
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xrz",
+            "keys": {
+                "b": {
+                    "type": "Number",
+                    "order": 1
+                },
+                "g": {
+                    "type": "Formula",
+                    "order": 7,
+                    "returnType": "Number",
+                    "expression": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "WRITE_ALL"
+                ],
+                "USER": [
+                    "READ_ALL"
+                ]
+            }
+        }
+    }
+]

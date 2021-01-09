@@ -1,0 +1,42 @@
+[
+    {
+        "step": 1,
+        "hash": "921a4ffadaa74cf5026a1017b103f26f913b9125e02c13e99cc110b134795183",
+        "response": [
+            [
+                {
+                    "organization": 1,
+                    "typeName": "B3",
+                    "active": true,
+                    "variableName": "1",
+                    "values": {
+                        "a": "kavita",
+                        "b": 1.22,
+                        "c": true,
+                        "e": 12
+                    }
+                }
+            ],
+            {}
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B3",
+                        "variableName": "",
+                        "values": {
+                            "a": "kavita",
+                            "b": 1.22,
+                            "c": true,
+                            "e": 12
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

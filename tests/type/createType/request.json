@@ -1,0 +1,91 @@
+[
+    {
+      
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B1",
+                        "variableName": "",
+                        "values": {
+                            "a": [
+                                {
+                                    "variableName": "1",
+                                    "values": {
+                                        "b": "rose",
+                                        "c": [
+                                            "Bhutan"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "op": "update",
+                        "typeName": "B1",
+                        "variableName": "1",
+                        "values": {
+                            "a": {
+                                "add": [
+                                    {
+                                        "variableName": "2",
+                                        "values": {
+                                            "b": "pink",
+                                            "c": [
+                                                "France"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]
+
+--------
+postman file type/create---------
+{
+    "orgId": 1,
+    "typeName": "A1",
+    "keys": {
+        "a": {
+            "type": "List",
+            "min": 0,
+            "max": 2,
+            "order": 4,
+            "listType": {
+                "typeName": "Xyz",
+                "keys": {
+                    "b": {
+                        "type": "Text",
+                        "order": 1
+                    },
+                    "c": {
+                        "type": "List",
+                        "min": 0,
+                        "max": 2,
+                        "order": 2,
+                        "listType": "Country"
+                    }
+                }
+            }
+        }
+    },
+    "permissions": [],
+    "roles": {
+        "ADMIN": [
+            "WRITE_ALL"
+        ],
+        "USER": [
+            "READ_ALL"
+        ]
+    }
+}

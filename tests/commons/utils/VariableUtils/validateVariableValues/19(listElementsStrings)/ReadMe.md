@@ -1,0 +1,1 @@
+ if list is global all must be string

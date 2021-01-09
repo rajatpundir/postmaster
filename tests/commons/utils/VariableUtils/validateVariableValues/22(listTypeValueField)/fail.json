@@ -1,0 +1,37 @@
+[
+    {
+        "step": 1,
+        "hash": "58e661ea9f39fd63dccde6b4bf709b52c7f3a047af81b6e327e2ff8cab8603f8",
+        "response": [
+            [
+                {
+                    "f": {
+                        "values": "Field is missing in request body of one of the variables"
+                    },
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A2",
+                        "variableName": "",
+                        "values": {
+                            "f": [
+                                {
+                                    "variableName": "1",
+                                    "a": "kavita"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

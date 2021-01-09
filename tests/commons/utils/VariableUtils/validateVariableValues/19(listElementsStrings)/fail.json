@@ -1,0 +1,34 @@
+[
+    {
+        "step": 1,
+        "hash": "fd66e49ec3585d717455bf03ee8158dc86483a236ee30754a452dfd175166271",
+        "response": [
+            [
+                {
+                    "a": "Unexpected value for parameter",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A2",
+                        "variableName": "",
+                        "values": {
+                            "a": [
+                                "India",
+                                {}
+                                
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

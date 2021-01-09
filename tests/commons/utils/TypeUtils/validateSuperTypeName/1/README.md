@@ -1,0 +1,1 @@
+Type's superTypeName name should follow the regex pattern ^[A-Z][a-zA-Z0-9]*$

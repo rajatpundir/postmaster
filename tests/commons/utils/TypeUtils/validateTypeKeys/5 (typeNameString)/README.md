@@ -1,0 +1,1 @@
+ typeName field must be a string

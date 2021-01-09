@@ -1,0 +1,27 @@
+
+[
+    {
+        "step": 1,
+        "hash": "d7968a8452cd5ec4a1e02067db3935eca45d7f0680610f3088f7248c7fba5570",
+        "response": [
+            [
+                {
+                    "variableName": "Field is missing in request body"
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "context": 123,
+                        "typeName": "Ax"
+                    }
+                ]
+            ]
+        }
+    }
+]

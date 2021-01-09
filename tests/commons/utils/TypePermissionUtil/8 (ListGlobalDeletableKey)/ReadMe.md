@@ -1,0 +1,1 @@
+local list permission must have deletable key

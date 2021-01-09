@@ -1,0 +1,31 @@
+[
+    {
+        "step": 1,
+        "hash": "eb1ffc39163481d5143b8d2fe9ddbd322e416a0429289a6792cd70b7d93fb0a9",
+        "response": [
+            [
+                {
+                    "c": "Unexpected value for parameter",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B3",
+                        "variableName": "",
+                        "values": {
+                          
+                            "c": []
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

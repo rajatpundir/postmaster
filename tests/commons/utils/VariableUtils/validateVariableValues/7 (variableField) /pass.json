@@ -1,0 +1,39 @@
+[
+    {
+        "step": 1,
+        "hash": "03cdb7cdf22d9f78542837bd14e50637a1e0f2baafd0396ccd2c89ac1d1ddf8a",
+        "response": [
+            [
+                {
+                    "organization": 1,
+                    "typeName": "B",
+                    "active": true,
+                    "variableName": "1",
+                    "values": {
+                        "a": 1,
+                        "b": 0,
+                        "c": 0,
+                        "d": 1
+                    }
+                }
+            ],
+            {}
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B",
+                        "variableName": "",
+                        "values": {
+                            "a": 1
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

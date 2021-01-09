@@ -1,0 +1,1 @@
+min must be an number 

@@ -1,0 +1,1 @@
+ key must be defined according to its type text will contain text only

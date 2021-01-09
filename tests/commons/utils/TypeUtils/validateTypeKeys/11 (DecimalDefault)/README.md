@@ -1,0 +1,1 @@
+Decimal can not be a boolean

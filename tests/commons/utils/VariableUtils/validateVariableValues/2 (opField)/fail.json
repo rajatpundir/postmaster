@@ -1,0 +1,25 @@
+[
+    {
+        "step": 1,
+        "hash": "d97217b819179c27fc745f706a360a8fe809d2fdb6aba3712e047c387255b9d5",
+        "response": [
+            [
+                {
+                    "op": "Field is missing in request body",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "a": "hello"
+                    }
+                ]
+            ]
+        }
+    }
+]

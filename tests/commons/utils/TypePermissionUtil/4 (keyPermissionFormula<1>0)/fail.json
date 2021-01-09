@@ -4,27 +4,29 @@
         "response": {
             "statusCode": 400,
             "error": {
-                "permissions": {
-                    "a": {
-                        "creatable": "Unexpected value for parameter"
-                    }
-                }
+                "c": "Unexpected value for parameter"
             }
         },
         "url": "typePermission/create",
         "request": {
             "orgId": 1,
-            "typeName": "A1",
+            "typeName": "A",
             "permissionName": "READ_ONLY",
             "creatable": true,
             "deletable": true,
             "permissions": {
-                "a": {
-                    "creatable": [],
+                "a": 0,
+                "b": 1,
+                "c": 2,
+                "e": {
+                    "creatable": "true",
                     "deletable": "true",
                     "permissions": {
-                        "b": 0,
-                        "c": 1
+                        "a": {
+                            "permissions": {
+                                "a": 1
+                            }
+                        }
                     }
                 }
             }

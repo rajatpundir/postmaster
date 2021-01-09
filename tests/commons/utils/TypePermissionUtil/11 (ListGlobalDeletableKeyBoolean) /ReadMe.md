@@ -1,0 +1,1 @@
+ deletable key must be a boolean value

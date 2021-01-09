@@ -1,0 +1,28 @@
+[
+    {
+        "step": 1,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "keys": {
+                    "a": {
+                        "returnType": "Return Type is not valid"
+                    }
+                }
+            }
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xz",
+            "keys": {
+                "a": {
+                    "type": "Formula",
+                    "returnType": []
+                }
+            },
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

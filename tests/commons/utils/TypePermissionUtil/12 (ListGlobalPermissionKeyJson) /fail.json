@@ -6,7 +6,7 @@
             "error": {
                 "permissions": {
                     "a": {
-                        "creatable": "Unexpected value for parameter"
+                        "permissions": "Unexpected value for parameter"
                     }
                 }
             }
@@ -20,12 +20,9 @@
             "deletable": true,
             "permissions": {
                 "a": {
-                    "creatable": [],
+                    "creatable": "true",
                     "deletable": "true",
-                    "permissions": {
-                        "b": 0,
-                        "c": 1
-                    }
+                    "permissions": []
                 }
             }
         }

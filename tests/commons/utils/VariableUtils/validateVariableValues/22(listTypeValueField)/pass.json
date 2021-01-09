@@ -1,0 +1,51 @@
+[
+    {
+        "step": 1,
+        "hash": "021a59f6018fceabd2ad782e7529c6dd7b76f8bfc90bf1ca446cf6db2630306d",
+        "response": [
+            [
+                {
+                    "organization": 1,
+                    "typeName": "A2",
+                    "active": true,
+                    "variableName": "1",
+                    "values": {
+                        "f": [
+                            {
+                                "context": 561,
+                                "variableName": "1",
+                                "values": {
+                                    "a": "kavita"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            {}
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A2",
+                        "variableName": "",
+                        "values": {
+                            "f": [
+                                {
+                                    "variableName": "1",
+                                    "values": {
+                                        "a": "kavita"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

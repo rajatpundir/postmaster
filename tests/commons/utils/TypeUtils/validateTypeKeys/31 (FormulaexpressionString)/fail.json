@@ -1,0 +1,29 @@
+[
+    {
+        "step": 1,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "keys": {
+                    "a": {
+                        "expression": "Formula expression is not valid"
+                    }
+                }
+            }
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xz",
+            "keys": {
+                "a": {
+                    "type": "Formula",
+                    "returnType": "Number",
+                    "expression": ""
+                }
+            },
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "step": 1,
+        "hash": "12c0c63a108838a9746d9a7c2a23f5170ee16eaecd57d6ae65fe12d4b0123806",
+        "response": [
+            [
+                {
+                    "context": "Unexpected value for parameter",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "context": "as"
+                    }
+                ]
+            ]
+        }
+    }
+]

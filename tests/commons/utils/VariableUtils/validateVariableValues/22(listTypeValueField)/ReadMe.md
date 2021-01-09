@@ -1,0 +1,1 @@
+if list type is not global value key must be defined

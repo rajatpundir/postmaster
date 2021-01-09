@@ -1,0 +1,1 @@
+ permission key must be a Json Object

@@ -1,0 +1,37 @@
+[
+    {
+        "step": 1,
+        "hash": "1bdd33e7b437c2dfbb28cf4def17d33c20a43f668ad56c51383dc8c031fcae85",
+        "response": [
+            [
+                {
+                    "f": {
+                        "variableName": "Unexpected value for parameter"
+                    },
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A2",
+                        "variableName": "",
+                        "values": {
+                            "f": [
+                                {
+                                    "variableName": [],
+                                    "a": "kavita"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

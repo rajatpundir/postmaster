@@ -1,0 +1,30 @@
+[
+    {
+        "step": 1,
+        "hash": "62030d35a9f357007b9bade4a790194395954b52bdb306788afbcbef9dd288c5",
+        "response": [
+            [
+                {
+                    "a": "Unexpected value for parameter",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B5",
+                        "variableName": "",
+                        "values": {
+                            "a": "kavita"
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+        "step": 1,
+        "hash": "519b36f22c5bd6babd0c2e088a0925e67ad2e3d9cb97e7b8d5af927c2b03a2d4",
+        "response": [
+            [
+                {
+                    "organization": 1,
+                    "typeName": "A2",
+                    "active": true,
+                    "variableName": "6",
+                    "values": {
+                        "a": 0,
+                        "b": "",
+                        "c": 0.0,
+                        "d": true
+                    }
+                },
+                {
+                    "organization": 1,
+                    "typeName": "A2",
+                    "active": true,
+                    "variableName": "1",
+                    "values": {
+                        "a": 0,
+                        "b": "abs",
+                        "c": 0.0,
+                        "d": false
+                    }
+                }
+            ],
+            {}
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A2",
+                        "variableName": "",
+                        "values": {
+                            "d": true
+                        }
+                    },
+                    {
+                        "op": "update",
+                        "typeName": "A2",
+                        "variableName": "1",
+                        "values": {
+                            "d": false
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

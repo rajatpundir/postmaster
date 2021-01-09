@@ -6,7 +6,7 @@
             "error": {
                 "permissions": {
                     "a": {
-                        "creatable": "Unexpected value for parameter"
+                        "deletable": "Field is missing in request body"
                     }
                 }
             }
@@ -20,8 +20,7 @@
             "deletable": true,
             "permissions": {
                 "a": {
-                    "creatable": [],
-                    "deletable": "true",
+                    "creatable": "true",
                     "permissions": {
                         "b": 0,
                         "c": 1

@@ -1,0 +1,55 @@
+[
+    {
+        "step": 1,
+        "hash": "bee55e23eb3ab9b3d67c2c39f435cb939ee052969ef8db5e33c4cbfe7865756e",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
+        "url": "organization/create",
+        "request": {
+            "organization": "pibity",
+            "admin": "admin@pibity.com",
+            "firstName": "System",
+            "lastName": "Administrator",
+            "password": "1234",
+            "details": {}
+        }
+    },
+    {
+        "step": 2,
+        "hash": "c11b283039cd12f0a59ab75344f02dae76ad5e0720c6eae8f963a72a619fd32a",
+        "response": {
+            "orgId": 1,
+            "autoId": false,
+            "typeName": "A2",
+            "keys": {},
+            "permissions": [
+                {
+                    "orgId": 1,
+                    "typeName": "A2",
+                    "permissionName": "READ_ALL",
+                    "creatable": false,
+                    "deletable": false,
+                    "permissions": {}
+                },
+                {
+                    "orgId": 1,
+                    "typeName": "A2",
+                    "permissionName": "WRITE_ALL",
+                    "creatable": true,
+                    "deletable": true,
+                    "permissions": {}
+                }
+            ]
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "A2",
+            "keys": {},
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

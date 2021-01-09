@@ -1,0 +1,71 @@
+[
+    {
+        "step": 1,
+        "hash": "bee55e23eb3ab9b3d67c2c39f435cb939ee052969ef8db5e33c4cbfe7865756e",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
+        "url": "organization/create",
+        "request": {
+            "organization": "pibity",
+            "admin": "admin@pibity.com",
+            "firstName": "System",
+            "lastName": "Administrator",
+            "password": "1234",
+            "details": {}
+        }
+    },
+    {
+        "step": 2,
+        "hash": "3a60c909f5567b0e73adf32f2a77b0d2860af4169b9acc4d8ce9ac0df0b32b41",
+        "response": {
+            "orgId": 1,
+            "autoId": false,
+            "typeName": "Xz",
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": "Text",
+                    "default": "hello"
+                }
+            },
+            "permissions": [
+                {
+                    "orgId": 1,
+                    "typeName": "Xz",
+                    "permissionName": "READ_ALL",
+                    "creatable": false,
+                    "deletable": false,
+                    "permissions": {
+                        "a": "READ"
+                    }
+                },
+                {
+                    "orgId": 1,
+                    "typeName": "Xz",
+                    "permissionName": "WRITE_ALL",
+                    "creatable": true,
+                    "deletable": true,
+                    "permissions": {
+                        "a": "WRITE"
+                    }
+                }
+            ]
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xz",
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": "Text",
+                    "default": "hello"
+                }
+            },
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

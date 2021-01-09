@@ -1,0 +1,40 @@
+[
+    {
+        "step": 1,
+        "hash": "7a2b8710ba04f31dbb7c10f637f00947a9b3c9534509d72dd5fe488d9a222667",
+        "response": [
+            [
+                {
+                    "a": "List cannot contain more than 8 variables",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B5",
+                        "variableName": "",
+                        "values": {
+                            "a": [
+                                "India",
+                                "Agganisthan",
+                                "a",
+                                "b",
+                                "h",
+                                "dh",
+                                "dhg",
+                                "hgh",
+                                "ghg"
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

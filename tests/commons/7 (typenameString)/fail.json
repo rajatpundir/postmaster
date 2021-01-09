@@ -1,0 +1,26 @@
+[
+    {
+        "step": 1,
+        "hash": "304c1fed3d661828f42180f872c82f6666ed9fa57eb398fd5ad55fd11c488bfc",
+        "response": [
+            [
+                {
+                    "typeName": "Field is missing in request body",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "context": 123
+                    }
+                ]
+            ]
+        }
+    }
+]

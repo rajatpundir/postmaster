@@ -1,0 +1,96 @@
+[
+    {
+        "step": 1,
+        "hash": "bee55e23eb3ab9b3d67c2c39f435cb939ee052969ef8db5e33c4cbfe7865756e",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
+        "url": "organization/create",
+        "request": {
+            "organization": "pibity",
+            "admin": "admin@pibity.com",
+            "firstName": "System",
+            "lastName": "Administrator",
+            "password": "1234",
+            "details": {}
+        }
+    },
+    {
+        "step": 2,
+        "hash": "5e33d19ef9922f225cc1102d124cc87863c21e9aaeda06198d4aa3d187e3d233",
+        "response": {
+            "orgId": 1,
+            "autoId": false,
+            "typeName": "Xyz",
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": {
+                        "superTypeName": "Xyz",
+                        "typeName": "Zaaa",
+                        "keys": {
+                            "s": {
+                                "order": 2,
+                                "type": "Number",
+                                "default": 0
+                            }
+                        }
+                    }
+                }
+            },
+            "permissions": [
+                {
+                    "orgId": 1,
+                    "typeName": "Xyz",
+                    "permissionName": "READ_ALL",
+                    "creatable": false,
+                    "deletable": false,
+                    "permissions": {
+                        "a": {
+                            "permissions": {
+                                "s": "READ"
+                            }
+                        }
+                    }
+                },
+                {
+                    "orgId": 1,
+                    "typeName": "Xyz",
+                    "permissionName": "WRITE_ALL",
+                    "creatable": true,
+                    "deletable": true,
+                    "permissions": {
+                        "a": {
+                            "permissions": {
+                                "s": "WRITE"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xyz",
+            "keys": {
+                "a": {
+                    "order": 1,
+                    "type": {
+                        "typeName": "Zaaa",
+                        "multiplicity": 2,
+                        "keys": {
+                            "s": {
+                                "type": "Number",
+                                "order": 2
+                            }
+                        }
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

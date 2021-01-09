@@ -1,0 +1,33 @@
+[
+    {
+        "step": 1,
+        "hash": "c77842486bdc0d69457585beda3c8ba3518e81784c4d816a0f0f39d9051f5a67",
+        "response": [
+            [
+                {
+                    "a": "List cannot contain less than 3 variables",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B5",
+                        "variableName": "",
+                        "values": {
+                            "a": [
+                                "India",
+                                "Agganisthan"
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

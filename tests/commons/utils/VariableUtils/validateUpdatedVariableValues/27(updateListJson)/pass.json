@@ -1,0 +1,87 @@
+[
+    {
+        "step": 1,
+        "hash": "a9188c78d096210259193d2316406361b5d76ea396a16670c3819b4a4539dee7",
+        "response": [
+            [
+                {
+                    "organization": 1,
+                    "typeName": "A5",
+                    "active": true,
+                    "variableName": "13",
+                    "values": {
+                        "b": [
+                            "India"
+                        ]
+                    }
+                },
+                {
+                    "organization": 1,
+                    "typeName": "A5",
+                    "active": true,
+                    "variableName": "11",
+                    "values": {
+                        "b": [
+                            "India",
+                            "Bhutan"
+                        ]
+                    }
+                },
+                {
+                    "organization": 1,
+                    "typeName": "A5",
+                    "active": true,
+                    "variableName": "11",
+                    "values": {
+                        "b": [
+                            "India"
+                        ]
+                    }
+                }
+            ],
+            {}
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "A5",
+                        "variableName": "",
+                        "values": {
+                            "b": [
+                                "India"
+                            ]
+                        }
+                    },
+                    {
+                        "op": "update",
+                        "typeName": "A5",
+                        "variableName": "11",
+                        "values": {
+                            "b": {
+                                "add": [
+                                    "Bhutan"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "op": "update",
+                        "typeName": "A5",
+                        "variableName": "11",
+                        "values": {
+                            "b": {
+                                "remove": [
+                                    "Bhutan"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

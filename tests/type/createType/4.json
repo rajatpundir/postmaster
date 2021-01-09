@@ -1,0 +1,266 @@
+[
+    {
+        "step": 1,
+        "hash": "b702d5b5848b453e7de807d9a7b8d88c1cb5c65469afd99d808df4acbb88d8e3",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
+        "url": "organization/create",
+        "request": {
+            "organization": "pibity",
+            "admin": "admin1@xyz",
+            "firstName": "admin",
+            "lastName": "",
+            "password": "1234",
+            "details": {}
+        }
+    },
+    {
+        "hash": "b702d5b5848b453e7de807d9a7b8d88c1cb5c65469afd99d808df4acbb88d8e3",
+        "url": "type/create",
+        "request": {
+            "typeName": "zzzxczxc",
+            "autoId": true,
+            "keys": {
+                "num": {
+                    "order": 11,
+                    "type": "Number",
+                    "default": "565"
+                },
+                "textt": {
+                    "order": 12,
+                    "type": "Text"
+                },
+                "e": {
+                    "type": "List",
+                    "listType": "Country",
+                    "order": 13,
+                    "max": "4",
+                    "min": "0"
+                },
+                "f": {
+                    "order": 14,
+                    "type": "Country"
+                },
+                "g": {
+                    "type": "List",
+                    "max": 8,
+                    "min": 3,
+                    "order": 15,
+                    "listType": {
+                        "typeName": "Wff",
+                        "keys": {
+                            "a": {
+                                "type": "Text",
+                                "order": 1
+                            },
+                            "c": {
+                                "type": "Decimal",
+                                "order": 3
+                            }
+                        }
+                    }
+                },
+                "a": {
+                    "order": 1,
+                    "type": "Boolean"
+                },
+                "b": {
+                    "order": 2,
+                    "type": "Boolean"
+                },
+                "bb": {
+                    "order": 4,
+                    "type": "Number",
+                    "default": 333
+                },
+                "ccKeys": {
+                    "order": 6,
+                    "type": {
+                        "typeName": "XYZ",
+                        "keys": {
+                            "b": {
+                                "type": "Number",
+                                "order": 1
+                            }
+                        }
+                    }
+                },
+                "c": {
+                    "order": 3,
+                    "type": "Formula",
+                    "returnType": "Boolean",
+                    "expression": {
+                        "op": "and",
+                        "types": [
+                            "Boolean"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Boolean"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "testPlus": {
+                    "order": 5,
+                    "type": "Formula",
+                    "returnType": "Number",
+                    "expression": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "bb"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "num"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "WRITE_ALL"
+                ],
+                "USER": [
+                    "READ_ALL"
+                ]
+            },
+            "orgId": 1
+        }
+    },
+    {
+        "hash": "b702d5b5848b453e7de807d9a7b8d88c1cb5c65469afd99d808df4acbb88d8e3",
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "ZZ",
+                        "variableName": "",
+                        "values": {
+                            "a": true,
+                            "num": 2222,
+                            "f": "Australia",
+                            "textt": "simran",
+                            "e": [
+                                "India",
+                                "France"
+                            ],
+                            "g": [
+                                {
+                                    "variableName": "1",
+                                    "values": {
+                                        "a": "kavita",
+                                        "c": "12.22"
+                                    }
+                                },
+                                {
+                                    "variableName": "2",
+                                    "values": {
+                                        "a": "priynka",
+                                        "c": "188.22"
+                                    }
+                                },
+                                {
+                                    "variableName": "3",
+                                    "values": {
+                                        "a": "adhey",
+                                        "c": "18.22"
+                                    }
+                                }
+                            ],
+                            "b": true,
+                            "ccKeys": {
+                                "values": {
+                                    "b": 56
+                                }
+                            }
+                        }
+                    }
+                ],
+                [
+                    {
+                        "op": "create",
+                        "typeName": "ZZ",
+                        "variableName": "",
+                        "values": {
+                            "a": true,
+                            "b": false,
+                            "num": 2222,
+                            "textt": "simran",
+                            "f": "Australia",
+                            "e": [
+                                "Afghanistan",
+                                "Iran"
+                            ],
+                            "g": [
+                                {
+                                    "variableName": "1",
+                                    "values": {
+                                        "a": "kavita",
+                                        "c": "12.22"
+                                    }
+                                },
+                                {
+                                    "variableName": "2",
+                                    "values": {
+                                        "a": "priynka",
+                                        "c": "188.22"
+                                    }
+                                },
+                                {
+                                    "variableName": "3",
+                                    "values": {
+                                        "a": "neeta ",
+                                        "c": "18.22"
+                                    }
+                                }
+                            ],
+                            "ccKeys": {
+                                "values": {
+                                    "b": 54
+                                }
+                            }
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

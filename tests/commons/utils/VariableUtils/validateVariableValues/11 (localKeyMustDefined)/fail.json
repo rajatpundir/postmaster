@@ -1,0 +1,30 @@
+[
+    {
+        "step": 1,
+        "hash": "9e90758dc18004be8afda09252032ffa7ee13b58ff0aa86d50f11cb33d406873",
+        "response": [
+            [
+                {
+                    "f": "Key value is not provided",
+                    "step": 0
+                }
+            ]
+        ],
+        "url": "variables/mutate",
+        "request": {
+            "orgId": 1,
+            "queue": [
+                [
+                    {
+                        "op": "create",
+                        "typeName": "B3",
+                        "variableName": "",
+                        "values": {
+                            "a": 12
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+]

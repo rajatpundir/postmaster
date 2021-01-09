@@ -1,0 +1,28 @@
+[
+    {
+        "step": 1,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "keys": {
+                    "a": {
+                        "listType": "Type name for key is not valid"
+                    }
+                }
+            }
+        },
+        "url": "type/create",
+        "request": {
+            "orgId": 1,
+            "typeName": "Xz",
+            "keys": {
+                "a": {
+                    "type": "List",
+                    "listType": "asd"
+                }
+            },
+            "permissions": [],
+            "roles": {}
+        }
+    }
+]

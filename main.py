@@ -9,10 +9,10 @@ from watchdog.events import PatternMatchingEventHandler
 from keycloak import KeycloakOpenID
 
 tests_filename = './tests.json'
-config_filename = './pibity-erp/src/main/resources/postmaster.json'
+config_filename = '../pibity-erp/src/main/resources/postmaster.json'
 
 
-with open('./pibity-erp/src/main/resources/postmaster.json', 'r') as config_file:
+with open('../pibity-erp/src/main/resources/postmaster.json', 'r') as config_file:
     config = json.loads(config_file.read())
     config_hash = hashlib.sha256(json.dumps(
         config).encode('utf-8')).hexdigest()

@@ -1,0 +1,535 @@
+[
+    {
+        "step": 1,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "inputs": {
+                    "a": "Unexpected value for parameter"
+                }
+            }
+        },
+        "url": "function/create",
+        "request": {
+            "orgId": 1,
+            "functionName": "fu",
+            "inputs": {
+                "a": [],
+                "b": "Number"
+            },
+            "outputs": {
+                "f1o1": {
+                    "type": "Number",
+                    "values": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "f1o2": {
+                    "type": "Number",
+                    "values": {
+                        "op": "*",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "a"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "b"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    },
+    {
+        "url": "function/create",
+        "request": {
+            "orgId": 3,
+            "functionName": "fun2",
+            "inputs": {
+                "c": "Number",
+                "d": "Number",
+                "e": "Number"
+            },
+            "outputs": {
+                "f2o1": {
+                    "type": "Number",
+                    "values": {
+                        "op": "*",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "c"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "d"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "e"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "f2o2": {
+                    "type": "Number",
+                    "values": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "c"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "d"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    },
+    {
+        "url": "function/create",
+        "request": {
+            "orgId": 3,
+            "functionName": "fun3",
+            "inputs": {
+                "x": "Number",
+                "y": "Number",
+                "z": "Number",
+                "p": "Number"
+            },
+            "outputs": {
+                "f3o1": {
+                    "type": "Number",
+                    "values": {
+                        "op": "*",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "x"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "p"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "f3o2": {
+                    "type": "Number",
+                    "values": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "x"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "y"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "z"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "p"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    },
+    {
+        "url": "function/create",
+        "request": {
+            "orgId": 3,
+            "functionName": "fun4",
+            "inputs": {
+                "m": "Number",
+                "n": "Number",
+                "o": "Number",
+                "p": "Number"
+            },
+            "outputs": {
+                "f4o1": {
+                    "type": "Number",
+                    "values": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "m"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "n"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "o"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "f4o2": {
+                    "type": "Number",
+                    "values": {
+                        "op": "+",
+                        "types": [
+                            "Number"
+                        ],
+                        "args": [
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "n"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "o"
+                                ]
+                            },
+                            {
+                                "op": ".",
+                                "types": [
+                                    "Number"
+                                ],
+                                "args": [
+                                    "p"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    },
+    {
+        "url": "circuit/create",
+        "request": {
+            "orgId": 3,
+            "circuitName": "circuit",
+            "inputs": {
+                "a": {
+                    "type": "Number"
+                },
+                "b": {
+                    "type": "Number",
+                    "default": 42
+                },
+                "c": {
+                    "type": "Number"
+                },
+                "d": {
+                    "type": "Number"
+                },
+                "e": {
+                    "type": "Number"
+                }
+            },
+            "computations": {
+                "c1": {
+                    "order": 1,
+                    "type": "Function",
+                    "exec": "fun1",
+                    "connect": {
+                        "a": [
+                            "input",
+                            "a"
+                        ],
+                        "b": [
+                            "input",
+                            "b"
+                        ]
+                    }
+                },
+                "c2": {
+                    "order": 2,
+                    "type": "Function",
+                    "exec": "fun2",
+                    "connect": {
+                        "c": [
+                            "input",
+                            "c"
+                        ],
+                        "d": [
+                            "input",
+                            "d"
+                        ],
+                        "e": [
+                            "computation",
+                            "c1",
+                            "f1o2"
+                        ]
+                    }
+                },
+                "c3": {
+                    "order": 3,
+                    "type": "Function",
+                    "exec": "fun3",
+                    "connect": {
+                        "x": [
+                            "computation",
+                            "c1",
+                            "f1o1"
+                        ],
+                        "y": [
+                            "computation",
+                            "c1",
+                            "f1o2"
+                        ],
+                        "z": [
+                            "computation",
+                            "c2",
+                            "f2o1"
+                        ],
+                        "p": [
+                            "input",
+                            "e"
+                        ]
+                    }
+                },
+                "c4": {
+                    "order": 4,
+                    "type": "Function",
+                    "exec": "fun4",
+                    "connect": {
+                        "m": [
+                            "computation",
+                            "c3",
+                            "f3o1"
+                        ],
+                        "n": [
+                            "computation",
+                            "c3",
+                            "f3o2"
+                        ],
+                        "o": [
+                            "computation",
+                            "c2",
+                            "f2o1"
+                        ],
+                        "p": [
+                            "computation",
+                            "c2",
+                            "f2o2"
+                        ]
+                    }
+                }
+            },
+            "outputs": {
+                "m": {
+                    "type": "Number",
+                    "connect": [
+                        "c1",
+                        "f1o2"
+                    ]
+                },
+                "n": {
+                    "type": "Number",
+                    "connect": [
+                        "c2",
+                        "f2o1"
+                    ]
+                },
+                "o": {
+                    "type": "Number",
+                    "connect": [
+                        "c3",
+                        "f3o2"
+                    ]
+                },
+                "p": {
+                    "type": "Number",
+                    "connect": [
+                        "c4",
+                        "f4o1"
+                    ]
+                },
+                "q": {
+                    "type": "Number",
+                    "connect": [
+                        "c4",
+                        "f4o2"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "url": "circuit/execute",
+        "request": {
+            "orgId": 1,
+            "circuitName": "circuit",
+            "args": {
+                "a": 2,
+                "b": 3,
+                "c": 5,
+                "d": 7,
+                "e": 11
+            }
+        }
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "step": 1,
+        "hash": "0765103a979481c6cea94f4322bd5b69f2365d5f934e69e388dcebdb2b347565",
+        "response": {
+            "id": 1,
+            "name": "pibity"
+        },
+        "url": "organization/create",
+        "request": {
+            "organization": "pibity",
+            "admin": "admin@xyz.com",
+            "firstName": "Admin",
+            "lastName": "",
+            "password": "1234",
+            "details": {}
+        }
+    },
+    {
+        "step": 2,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "outputs": {
+                    "f1o2": {
+                        "type": "Field is missing in request body"
+                    }
+                }
+            }
+        },
+        "url": "function/create",
+        "request": {
+            "orgId": 1,
+            "functionName": "fun1",
+            "inputs": {
+                "a": "Number",
+                "b": "Number"
+            },
+            "outputs": {
+                "f1o2": {}
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    }
+]

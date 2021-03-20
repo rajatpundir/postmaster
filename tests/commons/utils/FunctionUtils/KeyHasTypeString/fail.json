@@ -1,0 +1,35 @@
+[
+    {
+        "step": 1,
+        "response": {
+            "statusCode": 400,
+            "error": {
+                "outputs": {
+                    "f1o2": {
+                        "type": "Unexpected value for parameter"
+                    }
+                }
+            }
+        },
+        "url": "function/create",
+        "request": {
+            "orgId": 1,
+            "functionName": "fun1",
+            "inputs": {
+                "a": "Number",
+                "b": "Number"
+            },
+            "outputs": {
+                "f1o2": {
+                    "type": {}
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    }
+]

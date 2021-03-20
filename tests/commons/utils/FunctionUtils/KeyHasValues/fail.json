@@ -1,0 +1,25 @@
+[
+    {
+        "url": "function/create",
+        "request": {
+            "orgId": 1,
+            "functionName": "feus1",
+            "inputs": {
+                "a": "Number",
+                "b": "Number"
+            },
+            "outputs": {
+                "f1o2": {
+                    "type": "Number",
+                    "values": ""
+                }
+            },
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    }
+]

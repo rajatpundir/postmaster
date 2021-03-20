@@ -1,0 +1,19 @@
+[
+    {
+        "url": "function/create",
+        "request": {
+            "orgId": 1,
+            "functionName": "faaa",
+            "inputs": {
+                "12": ""
+            },
+            "outputs": {},
+            "permissions": [],
+            "roles": {
+                "ADMIN": [
+                    "DEFAULT"
+                ]
+            }
+        }
+    }
+]
